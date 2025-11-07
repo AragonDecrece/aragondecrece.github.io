@@ -1,0 +1,145 @@
+/* ==== Secciones ==== */
+.section {
+  text-align: justify;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* ==== Navegación ==== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffffcc;
+  backdrop-filter: blur(8px);
+  border-bottom: 1.1px solid #ddd;
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+}
+
+.navbar a {
+  color: #5a2a83 !important;
+  font-weight: 400;
+  margin: 0 10px;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+
+.navbar a:hover {
+  color: #a050c4 !important;
+}
+
+/* ==== Tipografía ==== */
+body {
+  font-family: "Lato", sans-serif;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Centrar títulos pero mantener texto justificado */
+h1, h2 {
+  color: #5a2a83;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+/* ==== Primera sección destacada ==== */
+.highlight-box {
+  background-color: #5a2a83;
+  color: white;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* ==== Botones ==== */
+.button-container {
+  margin-top: 1.5rem;
+}
+
+.btn, .btn-outline {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 0.4rem;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: #5a2a83;
+  color: white !important;
+}
+
+.btn:hover {
+  background-color: #7738aa;
+}
+
+.btn-outline {
+  border: 2px solid #5a2a83;
+  color: #5a2a83 !important;
+}
+
+.btn-outline:hover {
+  background-color: #5a2a83;
+  color: white !important;
+}
+
+/* ==== Sección “Qué encontrarás” ==== */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 1.05rem;
+}
+
+.feature-item span.icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+/* ==== Mapa ==== */
+.map-container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.map-container iframe {
+  width: 90%;
+  max-width: 800px;
+  height: 400px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ==== Scroll ==== */
+html {
+  scroll-behavior: smooth;
+}
