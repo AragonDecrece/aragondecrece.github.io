@@ -602,7 +602,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Título junto al icono */
 .feature-card h3 {
-  color: #555;
+  color: #444;
   margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
@@ -612,7 +612,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Contenido debajo */
 .feature-card p {
-  color: #555;
+  color: #444;
   line-height: 1.5;
   margin: 0;
   text-align: left;
@@ -771,4 +771,14 @@ a.btn-outline {
   background-color: white !important;
   border: 2px solid #fdb863 !important;
   color: #5e3c99 !important;
+}
+
+/* ===== TODOS LOS TÍTULOS A IZQUIERDA ===== */
+
+h1, h2, h3 {
+  text-align: left !important;
+  text-align-last: left !important;
+  hyphens: none !important;
+  word-spacing: normal !important;
+  text-justify: auto !important;
 }
