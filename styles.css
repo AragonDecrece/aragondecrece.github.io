@@ -1,145 +1,702 @@
-/* ==== Secciones ==== */
-.section {
-  text-align: justify;
-  max-width: 1200px;
-  margin: 0 auto;
+/* ===== ESTILOS GENERALES ===== */
+
+
+.section-white {
+  background: transparent !important;
 }
 
+.section-orange {
+  background: transparent !important;
+}
 
-/* ==== Navegación ==== */
+/* Navegación */
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #ffffffcc;
   backdrop-filter: blur(8px);
-  border-bottom: 1.1px solid #ddd;
-  z-index: 1000;
-  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #ddd;
 }
 
-.navbar a {
-  color: #5a2a83 !important;
-  font-weight: 400;
-  margin: 0 10px;
-  font-size: 1.1rem;
-  letter-spacing: 0.03em;
-}
-
-.navbar a:hover {
-  color: #a050c4 !important;
-}
-
-/* ==== Tipografía ==== */
+/* Tipografía */
 body {
   font-family: "Lato", sans-serif;
-  color: #333;
-  line-height: 1.7;
-  margin: 0;
   font-size: 18px;
-}
-
-/* Centrar títulos pero mantener texto justificado */
-h1, h2 {
-  color: #5a2a83;
-  text-align: center;
-  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #333;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 800;
+  color: #5e3c99;
 }
 
 h2 {
-  font-size: 1.4rem;
-  font-weight: 500;
+  text-align: center !important;
+  font-weight: normal !important;
+  color: #5e3c99;
 }
 
-/* ==== Primera sección destacada ==== */
-.highlight-box {
-  background-color: #5a2a83;
-  color: white;
+/* Subrayado de mancha sutil para títulos h1 */
+h1 {
+  position: relative;
   display: inline-block;
-  padding: 12px 24px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* ==== Botones ==== */
+h1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 8px;
+  background: 
+    radial-gradient(
+      ellipse at center,
+      #fdb863 0%,
+      rgba(253, 184, 99, 0.4) 50%,
+      transparent 70%
+    );
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+/* Ajuste específico para el título principal si está centrado */
+#inicio h1 {
+  display: block;
+}
+
+#inicio h1::after {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+/* Botones */
 .button-container {
+  text-align: center;
   margin-top: 1.5rem;
-}
-
-.btn, .btn-outline {
-  display: inline-block;
-  padding: 0.8rem 1.8rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  margin: 0.4rem;
-  font-size: 1rem;
 }
 
 .btn {
-  background-color: #5a2a83;
-  color: white !important;
-}
-
-.btn:hover {
-  background-color: #7738aa;
+  background-color: #fdb863;
+  border: 2px solid #fdb863;
+  color: #5e3c99 !important;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: none;
 }
 
 .btn-outline {
-  border: 2px solid #5a2a83;
-  color: #5a2a83 !important;
+  background-color: white;
+  border: 2px solid #fdb863;
+  color: #5e3c99 !important;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: none;
 }
 
+.btn:hover,
 .btn-outline:hover {
-  background-color: #5a2a83;
-  color: white !important;
+  background-color: #e66101;
+  color: #ffffff !important;
+  box-shadow: 0 6px 18px rgba(94, 60, 153, 0.25);
 }
 
-/* ==== Sección “Qué encontrarás” ==== */
+/* Features */
 .features {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   margin-top: 2rem;
-}
-
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
   font-size: 1.05rem;
 }
 
-.feature-item span.icon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
+.features li {
+  margin-bottom: 0.8rem;
 }
 
-/* ==== Mapa ==== */
+/===== *MAPA* =====/
+
+/* Estilos para el contenedor del mapa */
 .map-container {
-  margin-top: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Iframe de OpenStreetMap */
+.osm-map {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+/* Contenedor de enlaces */
+.map-links {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Iconos en los enlaces */
+.map-icon {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .map-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .map-links a {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+}
+
+/* ===== GALERÍA DE IMÁGENES ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 250px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(94, 60, 153, 0.85);
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.gallery-item:hover .overlay {
+  transform: translateY(0);
+}
+
+/* ===== MODAL (LIGHTBOX) CORREGIDO ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain; /* Mantiene proporciones */
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+  background: #000; /* Fondo negro si la imagen es más pequeña */
+}
+
+/* FLECHAS DE NAVEGACIÓN */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.3s;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 1001;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(253, 184, 99, 0.8);
+  color: #5e3c99;
+}
+
+.next {
+  right: 30px;
+}
+
+.prev {
+  left: 30px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  background: rgba(0,0,0,0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+  color: #fdb863;
+  background: rgba(0,0,0,0.7);
+}
+
+#caption {
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  max-width: 80%;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+/* ===== OCULTAR NAVBAR CON MODAL ACTIVO ===== */
+/* Añade esto aquí */
+body.modal-active {
+  overflow: hidden !important;
+}
+
+body.modal-active .navbar {
+  display: none !important;
+}
+
+/* Para asegurar que el modal esté por encima de todo */
+.modal {
+  z-index: 9999 !important;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-item {
+    height: 200px;
+  }
+  
+  .modal-content {
+    max-width: 95%;
+    max-height: 70%;
+  }
+  
+  .close {
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .prev, .next {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .prev {
+    left: 15px;
+  }
+  
+  .next {
+    right: 15px;
+  }
+  
+  #caption {
+    font-size: 1rem;
+    padding: 0.8rem;
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ===== JUSTIFICACIÓN CON GUIONES ===== */
+
+/* 1. CONFIGURACIÓN GLOBAL PARA ESPAÑOL */
+html[lang="es"] {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+/* 2. PARA TODOS LOS PÁRRAFOS EN .section */
+.section p {
+  text-align: justify !important;
+  text-align-last: left !important;
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  -ms-hyphens: auto !important;
+  hyphenate-limit-chars: 6 3 3 !important;
+  word-spacing: normal !important;
+  line-height: 1.7 !important;
+  text-justify: inter-word !important;
+}
+
+/* 3. PARA .features (lista de características) */
+.features,
+.features li,
+.features span,
+.features div {
+  text-align: justify !important;
+  text-align-last: left !important;
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  hyphenate-limit-chars: 6 3 3 !important;
+  word-spacing: normal !important;
+  line-height: 1.6 !important;
+  text-justify: inter-word !important;
+}
+
+/* Elementos específicos dentro de .features */
+.features li {
+  margin-bottom: 0.8rem !important;
+  padding-left: 0.5rem !important;
+}
+
+.features li::before {
+  content: "• ";
+  color: #e66101;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* 4. PARA .news-excerpt (programa del evento) */
+.news-excerpt,
+.news-excerpt p,
+.news-excerpt li,
+.news-excerpt span,
+.news-excerpt div,
+.news-excerpt strong,
+.news-excerpt em {
+  text-align: justify !important;
+  text-align-last: left !important;
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  hyphenate-limit-chars: 6 3 3 !important;
+  word-spacing: normal !important;
+  line-height: 1.6 !important;
+  text-justify: inter-word !important;
+}
+
+/* Para listas dentro de .news-excerpt */
+.news-excerpt ul,
+.news-excerpt ol {
+  text-align: justify !important;
+  padding-left: 1.5rem !important;
+}
+
+.news-excerpt li {
+  text-align: justify !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* 5. PARA EL CONTENIDO DIRECTO EN .section (sin etiquetas p) */
+.section > :not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(.button-container):not(.gallery-grid):not(.features):not(.news-grid):not(img):not(iframe):not(script):not(style):not(.modal):not(.map-container) {
+  text-align: justify !important;
+  text-align-last: left !important;
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  hyphenate-limit-chars: 6 3 3 !important;
+  word-spacing: normal !important;
+  line-height: 1.7 !important;
+  text-justify: inter-word !important;
+}
+
+/* 6. ESPECÍFICO PARA #quienes-somos */
+#quienes-somos.section-white > :not(h2):not(.gallery-grid):not(img):not(script):not(style):not(.modal),
+#quienes-somos .section-white > :not(h2):not(.gallery-grid):not(img):not(script):not(style):not(.modal) {
+  text-align: justify !important;
+  text-align-last: left !important;
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  hyphenate-limit-chars: 6 3 3 !important;
+  word-spacing: normal !important;
+  line-height: 1.7 !important;
+  text-justify: inter-word !important;
+}
+
+/* 7. CONFIGURACIÓN ESPECÍFICA POR NAVEGADOR */
+
+/* Para Firefox */
+@-moz-document url-prefix() {
+  .section p,
+  .features,
+  .news-excerpt,
+  #quienes-somos .section-white > :not(h2) {
+    -moz-hyphens: auto !important;
+    -moz-hyphenate-limit-chars: 6 3 3 !important;
+  }
+}
+
+/* Para WebKit (Chrome, Safari, Edge) */
+@supports (-webkit-hyphens: auto) {
+  .section p,
+  .features,
+  .news-excerpt {
+    -webkit-hyphenate-limit-before: 3 !important;
+    -webkit-hyphenate-limit-after: 3 !important;
+    -webkit-hyphenate-limit-lines: 2 !important;
+  }
+}
+
+/* 8. EXCLUIR ELEMENTOS QUE NO DEBEN DIVIDIRSE */
+.btn, .btn-outline,
+.news-title, .news-date-tag,
+.navbar a, .gallery-img, .overlay,
+.hero-text, .hero-text p,
+.button-container, .map-container,
+h1, h2, h3, h4, h5, h6 {
+  hyphens: none !important;
+  text-align: inherit !important;
+  text-align-last: auto !important;
+}
+
+/* 9. PARA ELEMENTOS CON TEXTO EN LÍNEA DENTRO DE BLOQUES JUSTIFICADOS */
+.features strong,
+.news-excerpt strong,
+.section strong {
+  hyphens: manual !important;
+  display: inline !important;
+}
+
+/* 10. MANTENER HORARIOS Y ELEMENTOS ESPECIALES SIN DIVIDIR */
+.news-excerpt p strong:first-child,
+.news-excerpt li strong:first-child,
+.features li strong:first-child {
+  hyphens: none !important;
+  white-space: nowrap !important;
+}
+
+/* ===== FEATURES EN CAJAS ===== */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(94, 60, 153, 0.1);
+  border: 1px solid rgba(178, 171, 210, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(94, 60, 153, 0.15);
+  border-color: #b2abd2;
+}
+
+/* Cabecera con icono y título alineados */
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Icono emoji */
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.map-container iframe {
-  width: 90%;
-  max-width: 800px;
-  height: 400px;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+/* Para usar IMAGEN en lugar de icono */
+.feature-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
 }
 
-/* ==== Scroll ==== */
-html {
-  scroll-behavior: smooth;
+/* Título junto al icono */
+.feature-card h3 {
+  color: #555;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+  flex-grow: 1;
 }
+
+/* Contenido debajo */
+.feature-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+  font-size: 0.95rem;
+  padding-left: calc(50px + 1rem); /* Alineado con el título */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-card {
+    padding: 1.2rem;
+  }
+  
+  .feature-header {
+    gap: 0.8rem;
+  }
+  
+  .feature-icon,
+  .feature-image {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+  
+  .feature-card p {
+    padding-left: calc(40px + 0.8rem);
+  }
+}
+
+/* ===== PARA MULTIPLES CONTENEDORES DE BOTONES ===== */
+
+/* Esto hará que todos los .button-container se comporten igual */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Para asegurar que los enlaces dentro tengan el mismo estilo */
+.button-container .btn,
+.button-container .btn-outline {
+  flex: 0 1 auto; /* No crece, pero puede encogerse */
+  min-width: 150px; /* Ancho mínimo para que no se compriman demasiado */
+  text-align: center;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button-container .btn,
+  .button-container .btn-outline {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Para los map-links específicamente (ya lo tienes funcionando) */
+.map-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .map-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .map-links .btn-outline {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
