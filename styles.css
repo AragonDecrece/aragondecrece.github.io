@@ -523,6 +523,7 @@ html[lang="es"] {
 .navbar a, .gallery-img, .overlay,
 .hero-text, .hero-text p,
 .button-container, .map-container,
+.map-links, .map-links a,  /* ← AÑADE ESTO */
 h1, h2, h3, h4, h5, h6 {
   hyphens: none !important;
   text-align: inherit !important;
@@ -700,3 +701,74 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ===== EXCLUIR BOTONES DE MAP-LINKS DE LA JUSTIFICACIÓN ===== */
+
+/* Excluir específicamente los botones dentro de .map-links */
+.map-links .btn-outline,
+.map-links a.btn-outline,
+.map-links .btn,
+.map-links a.btn {
+  hyphens: none !important;
+  text-align: center !important;
+  text-align-last: center !important;
+  word-spacing: normal !important;
+  letter-spacing: normal !important;
+  white-space: nowrap !important;
+}
+
+/* También excluir los botones regulares */
+.button-container .btn-outline,
+.button-container .btn,
+.button-container a.btn-outline,
+.button-container a.btn {
+  hyphens: none !important;
+  text-align: center !important;
+  text-align-last: center !important;
+  word-spacing: normal !important;
+  letter-spacing: normal !important;
+  white-space: nowrap !important;
+}
+
+/* ===== SOLUCIÓN NUCLEAR PARA BOTONES ===== */
+
+/* Desactivar TODAS las reglas de justificación para botones */
+.map-links *,
+.button-container *,
+.map-links a,
+.button-container a,
+.map-links .btn-outline,
+.button-container .btn-outline,
+.map-links .btn,
+.button-container .btn {
+  hyphens: none !important;
+  text-align: center !important;
+  text-align-last: center !important;
+  word-spacing: normal !important;
+  letter-spacing: normal !important;
+  white-space: nowrap !important;
+  text-justify: auto !important;
+  -webkit-hyphens: none !important;
+  -moz-hyphens: none !important;
+  -ms-hyphens: none !important;
+}
+
+/* Reset total para asegurar */
+a[class*="btn"] {
+  all: unset !important;
+  display: inline-block !important;
+  background-color: #fdb863 !important;
+  border: 2px solid #fdb863 !important;
+  color: #5e3c99 !important;
+  padding: 0.8rem 1.8rem !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  cursor: pointer !important;
+}
+
+a.btn-outline {
+  background-color: white !important;
+  border: 2px solid #fdb863 !important;
+  color: #5e3c99 !important;
+}
