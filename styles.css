@@ -524,10 +524,13 @@ html[lang="es"] {
 .hero-text, .hero-text p,
 .button-container, .map-container,
 .map-links, .map-links a,  /* ← AÑADE ESTO */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   hyphens: none !important;
-  text-align: inherit !important;
-  text-align-last: auto !important;
+  text-align: left !important;        /* CAMBIADO: inherit → left */
+  text-align-last: left !important;   /* AÑADIDO */
+  word-spacing: normal !important;    /* AÑADIDO */
+  text-justify: auto !important;      /* AÑADIDO */
+}
 }
 
 /* 9. PARA ELEMENTOS CON TEXTO EN LÍNEA DENTRO DE BLOQUES JUSTIFICADOS */
@@ -602,7 +605,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Título junto al icono */
 .feature-card h3 {
-  color: #444;
+  color: #333;
   margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
@@ -612,11 +615,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Contenido debajo */
 .feature-card p {
-  color: #444;
+  color: #333;
   line-height: 1.5;
   margin: 0;
   text-align: left;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   padding-left: calc(50px + 1rem); /* Alineado con el título */
 }
 
@@ -701,45 +704,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ===== EXCLUIR BOTONES DE MAP-LINKS DE LA JUSTIFICACIÓN ===== */
+/* ===== EXCLUIR BOTONES DE JUSTIFICACIÓN (VERSIÓN SEGURA) ===== */
 
-/* Excluir específicamente los botones dentro de .map-links */
-.map-links .btn-outline,
-.map-links a.btn-outline,
-.map-links .btn,
-.map-links a.btn {
-  hyphens: none !important;
-  text-align: center !important;
-  text-align-last: center !important;
-  word-spacing: normal !important;
-  letter-spacing: normal !important;
-  white-space: nowrap !important;
-}
-
-/* También excluir los botones regulares */
-.button-container .btn-outline,
+/* Solo excluir de justificación, mantener estilos normales */
 .button-container .btn,
-.button-container a.btn-outline,
-.button-container a.btn {
-  hyphens: none !important;
-  text-align: center !important;
-  text-align-last: center !important;
-  word-spacing: normal !important;
-  letter-spacing: normal !important;
-  white-space: nowrap !important;
-}
-
-/* ===== SOLUCIÓN NUCLEAR PARA BOTONES ===== */
-
-/* Desactivar TODAS las reglas de justificación para botones */
-.map-links *,
-.button-container *,
-.map-links a,
-.button-container a,
-.map-links .btn-outline,
 .button-container .btn-outline,
 .map-links .btn,
-.button-container .btn {
+.map-links .btn-outline,
+.button-container a[class*="btn"],
+.map-links a[class*="btn"] {
   hyphens: none !important;
   text-align: center !important;
   text-align-last: center !important;
@@ -747,30 +720,17 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: normal !important;
   white-space: nowrap !important;
   text-justify: auto !important;
-  -webkit-hyphens: none !important;
-  -moz-hyphens: none !important;
-  -ms-hyphens: none !important;
+  /* NO añadas background-color aquí */
 }
 
-/* Reset total para asegurar */
-a[class*="btn"] {
-  all: unset !important;
-  display: inline-block !important;
-  background-color: #fdb863 !important;
-  border: 2px solid #fdb863 !important;
-  color: #5e3c99 !important;
-  padding: 0.8rem 1.8rem !important;
-  border-radius: 10px !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  text-align: center !important;
-  cursor: pointer !important;
-}
-
-a.btn-outline {
-  background-color: white !important;
-  border: 2px solid #fdb863 !important;
-  color: #5e3c99 !important;
+/* Mantener los estilos hover originales */
+.button-container .btn:hover,
+.button-container .btn-outline:hover,
+.map-links .btn:hover,
+.map-links .btn-outline:hover {
+  background-color: #e66101 !important;
+  border-color: #e66101 !important;
+  color: #ffffff !important;
 }
 
 /* ===== TODOS LOS TÍTULOS A IZQUIERDA ===== */
@@ -781,4 +741,19 @@ h1, h2, h3 {
   hyphens: none !important;
   word-spacing: normal !important;
   text-justify: auto !important;
+}
+
+/* ===== SOBREESCRIBIR TAMAÑO DE LETRA PARA NEWS-EXCERPT ===== */
+
+.news-excerpt {
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+.news-excerpt p,
+.news-excerpt li,
+.news-excerpt span,
+.news-excerpt div {
+  font-size: inherit !important;
+  line-height: inherit !important;
 }
