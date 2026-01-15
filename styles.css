@@ -459,11 +459,12 @@ html[lang="es"] {
 .news-excerpt ol {
   text-align: justify !important;
   padding-left: 1.5rem !important;
+  margin: 0.4rem 0 !important; 
 }
 
 .news-excerpt li {
   text-align: justify !important;
-  margin-bottom: 0.5rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 /* 5. PARA EL CONTENIDO DIRECTO EN .section (sin etiquetas p) */
@@ -756,4 +757,535 @@ h1, h2, h3 {
 .news-excerpt div {
   font-size: inherit !important;
   line-height: inherit !important;
+}
+
+/* Contenedor del logo centrado */
+.logo-container {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+}
+
+/* ===== ESTILOS PARA EL MENÚ LATERAL DE QUARTO ===== */
+
+/* Contenedor principal del TOC */
+.sidebar.sidebar-navigation {
+  border-right: 2px solid #fdb863 !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Título del TOC */
+.sidebar-title {
+  color: #5e3c99 !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  font-size: 1.2rem !important;
+}
+
+/* Elementos del menú */
+.sidebar nav[role="doc-toc"] ul {
+  padding-left: 0.5rem !important;
+}
+
+.sidebar nav[role="doc-toc"] ul li {
+  margin-bottom: 0.8rem !important;
+}
+
+/* Enlaces del menú */
+.sidebar nav[role="doc-toc"] a {
+  color: #5e3c99 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 1.05rem !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+}
+
+/* Hover de enlaces */
+.sidebar nav[role="doc-toc"] a:hover,
+.sidebar nav[role="doc-toc"] a:focus,
+.sidebar nav[role="doc-toc"] a.active {
+  color: #e66101 !important;
+  background: rgba(253, 184, 99, 0.15) !important;
+  transform: translateX(5px) !important;
+}
+
+/* Indicador de sección activa */
+.sidebar nav[role="doc-toc"] a.active {
+  border-left: 3px solid #e66101 !important;
+  padding-left: 0.8rem !important;
+}
+
+/* Números de sección (si los hay) */
+.sidebar nav[role="doc-toc"] .toc-section-number {
+  color: #e66101 !important;
+  font-weight: 600 !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Responsive: en móviles el TOC se convierte en topbar */
+@media (max-width: 768px) {
+  .sidebar.sidebar-navigation {
+    border-right: none !important;
+    border-bottom: 2px solid #fdb863 !important;
+    padding-right: 0 !important;
+    padding-bottom: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .sidebar-title {
+    text-align: center !important;
+  }
+  
+  .sidebar nav[role="doc-toc"] ul {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+  }
+  
+  .sidebar nav[role="doc-toc"] ul li {
+    margin-bottom: 0 !important;
+  }
+  
+  .sidebar nav[role="doc-toc"] a {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.9rem !important;
+    border: 1px solid rgba(94, 60, 153, 0.2) !important;
+  }
+  
+  .sidebar nav[role="doc-toc"] a:hover {
+    transform: translateY(-2px) !important;
+  }
+}
+
+
+@keyframes gentle-pulse {
+  0% { box-shadow: 0 6px 20px rgba(230, 97, 1, 0.2); }
+  100% { box-shadow: 0 6px 30px rgba(230, 97, 1, 0.3); }
+}
+
+@media (max-width: 768px) {
+  .announcement-banner {
+    padding: 1rem;
+    margin: 0 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+
+/*=================================*/
+
+/* ===== BARRA SUPERIOR DE QUARTO (navbar) ===== */
+
+/* Contenedor principal de la navbar */
+.quarto-titlebar {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px) !important;
+  border-bottom: 2px solid #fdb863 !important;
+  box-shadow: 0 4px 15px rgba(94, 60, 153, 0.1) !important;
+}
+
+/* Título principal en la navbar */
+.navbar-brand {
+  color: #5e3c99 !important;
+  font-family: "Lato", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.3rem !important;
+}
+
+.navbar-brand:hover {
+  color: #e66101 !important;
+}
+
+/* Botones de la navbar */
+.navbar-nav .nav-link {
+  color: #5e3c99 !important;
+  font-family: "Lato", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.2rem !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #e66101 !important;
+  background: rgba(253, 184, 99, 0.15) !important;
+}
+
+/* Botón de menú hamburguesa (móvil) */
+.navbar-toggler {
+  border: 2px solid #fdb863 !important;
+  color: #5e3c99 !important;
+}
+
+.navbar-toggler:hover {
+  background: rgba(253, 184, 99, 0.15) !important;
+  border-color: #e66101 !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%235e3c99' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Botón de tema oscuro/claro (si existe) */
+.quarto-color-scheme {
+  color: #5e3c99 !important;
+  border: 2px solid #fdb863 !important;
+}
+
+.quarto-color-scheme:hover {
+  background: rgba(253, 184, 99, 0.15) !important;
+  color: #e66101 !important;
+  border-color: #e66101 !important;
+}
+
+/* Ajustar el contenido principal para la navbar fija */
+body:has(.quarto-titlebar) {
+  padding-top: 70px !important;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .navbar-nav {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid #fdb863 !important;
+    border-radius: 10px !important;
+    padding: 1rem !important;
+    margin-top: 0.5rem !important;
+    box-shadow: 0 8px 25px rgba(94, 60, 153, 0.15) !important;
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 0.3rem 0 !important;
+    text-align: center !important;
+  }
+  
+  body:has(.quarto-titlebar) {
+    padding-top: 60px !important;
+  }
+}
+
+/* ===== AJUSTES ESPECÍFICOS PARA TOC SOLO NIVEL 1 ===== */
+
+/* Ocultar niveles secundarios */
+.sidebar nav[role="doc-toc"] ul.section.toc.section.level2,
+.sidebar nav[role="doc-toc"] ul.section.toc.section.level3 {
+  display: none !important;
+}
+
+/* Espaciado más compacto para solo h1 */
+.sidebar nav[role="doc-toc"] ul.section.toc.section.level1 {
+  padding-left: 0 !important;
+}
+
+.sidebar nav[role="doc-toc"] ul.section.toc.section.level1 li {
+  margin-bottom: 1rem !important;
+}
+
+/* Asegurar que solo se ven los h1 */
+.sidebar nav[role="doc-toc"] a[data-scroll-target^=":header"]:not([data-scroll-target^=":h1-"]) {
+  display: none !important;
+}
+
+/* ===== OCULTAR SOLO UN TÍTULO ESPECÍFICO ===== */
+
+/* 1. Ocultar SOLO este título h1 específico en la página */
+h1.toc-only-hidden {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  visibility: hidden !important;
+  position: absolute !important;
+}
+
+/* 2. IMPORTANTE: NO ocultar lo que viene después del título */
+h1.toc-only-hidden + * {
+  display: block !important;
+  visibility: visible !important;
+  position: static !important;
+  height: auto !important;
+}
+
+/* 3. Asegurar que aparece en el TOC lateral */
+.sidebar nav[role="doc-toc"] a[href="#sobre-decrece-co"] {
+  display: block !important;
+  color: #5e3c99 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 1rem !important;
+  padding: 0.5rem 0.8rem !important;
+  background: rgba(253, 184, 99, 0.1) !important;
+  border-radius: 6px !important;
+  border-left: 4px solid #e66101 !important;
+}
+
+/* 4. Estilo hover para el enlace en TOC */
+.sidebar nav[role="doc-toc"] a[href="#sobre-decrece-co"]:hover {
+  color: #e66101 !important;
+  background: rgba(253, 184, 99, 0.2) !important;
+  transform: translateX(5px) !important;
+}
+
+
+/* ===== PROGRAMA MEJORADO - DISEÑO CREATIVO CON BORDES DE BOTÓN ===== */
+
+/* Contenedor principal del programa */
+.news-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 3rem 0;
+}
+
+/* Tarjeta de cada día */
+.news-article {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  border: 1px solid rgba(178, 171, 210, 0.4);
+  box-shadow: 0 8px 25px rgba(94, 60, 153, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.news-article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(94, 60, 153, 0.12);
+  border-color: #b2abd2;
+}
+
+/* Borde decorativo izquierdo */
+.news-article::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #5e3c99, #e66101);
+  transition: all 0.4s ease;
+}
+
+.news-article:hover::before {
+  background: linear-gradient(to bottom, #e66101, #fdb863);
+  width: 8px;
+}
+
+/* TÍTULO DEL DÍA - Estilo destacado */
+.news-title {
+  color: #e66101;
+  font-family: "Lato", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 2rem 0;
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+
+/* ETIQUETA DE HORARIO - CON BORDES IDÉNTICOS A BOTONES */
+.news-date-tag {
+  background: rgba(94, 60, 153, 0.1);
+  color: #5e3c99;
+  padding: 0.8rem 1.8rem; /* ← IDÉNTICO a .btn */
+  border-radius: 10px; /* ← IDÉNTICO a .btn */
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem 0;
+  border: 2px solid rgba(94, 60, 153, 0.3); /* ← IDÉNTICO a .btn */
+  font-family: "Lato", sans-serif;
+  font-weight: 600; /* ← IDÉNTICO a .btn */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px; /* Ajusta según necesites */
+  transition: all 0.3s ease; /* ← IDÉNTICO a .btn */
+  box-shadow: 0 4px 8px rgba(94, 60, 153, 0.1);
+  text-align: center;
+}
+
+
+/* CONTENIDO DE ACTIVIDADES - CON BORDES IDÉNTICOS A BOTONES */
+.news-excerpt {
+  background: rgba(253, 184, 99, 0.05);
+  border-radius: 10px; /* ← IDÉNTICO a .btn */
+  padding: 1.8rem;
+  margin: 0.3rem 0 1.8rem 0;
+  border: 2px solid rgba(253, 184, 99, 0.2); /* ← IDÉNTICO a .btn */
+  font-family: "Lato", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+  
+  /* GARANTIZAR QUE EL TEXTO NO SE SALE - ESPECIALMENTE NEGRITAS */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+/* Asegurar que TODOS los elementos dentro respetan el contenedor */
+.news-excerpt * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* TÍTULOS DENTRO DE ACTIVIDADES - con ajuste de texto */
+.news-excerpt > strong:first-of-type {
+  display: block;
+  color: #5e3c99;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px dashed rgba(94, 60, 153, 0.2);
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* LISTAS - mejor espaciado y ajuste */
+.news-excerpt ul {
+  margin: 1rem 0;
+  padding-left: 1.8rem;
+}
+
+.news-excerpt li {
+  margin: 0.8rem 0;
+  padding-left: 0.5rem;
+  position: relative;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.6;
+}
+
+.news-excerpt li:before {
+  color: #e66101;
+  font-weight: bold;
+  position: absolute;
+  left: -1rem;  
+  font-size: 1rem; 
+}
+
+/* SALAS DE TALLERES - diseño especial */
+.news-excerpt strong:not(:first-of-type),
+.news-excerpt p:has(+ ul) {
+  display: block;
+  background: rgba(94, 60, 153, 0.1);
+  color: #5e3c99;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin: 1.2rem 0 0.5rem 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-left: 4px solid #5e3c99;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-family: "Lato", sans-serif;
+}
+
+/* PONENTES en cursiva - estilo especial */
+.news-excerpt em {
+  color: #666;
+  font-style: italic;
+  font-weight: 500;
+  display: block;
+  margin-top: 0.3rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #fdb863;
+  padding-left: 1rem;
+  margin-left: 0.5rem;
+}
+
+/* Para frases EXTRA LARGAS (como Taller 2) */
+.texto-largo {
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Separador entre sesiones */
+.news-date-tag + .news-excerpt {
+  margin-top: 0.5rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .news-grid {
+    gap: 1.8rem;
+    margin: 2rem 0;
+  }
+  
+  .news-article {
+    padding: 1.8rem;
+    border-radius: 12px;
+  }
+  
+  .news-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .news-date-tag {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    margin: 1.2rem 0 0.8rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .news-excerpt {
+    padding: 1.5rem;
+    margin: 0.8rem 0 1.5rem 0;
+    font-size: 1rem;
+  }
+  
+  .news-excerpt ul {
+    padding-left: 1.5rem;
+  }
+  
+  .news-excerpt li {
+    margin: 0.7rem 0;
+  }
+  
+  /* En móvil, ajuste de texto más agresivo */
+  .news-excerpt,
+  .news-excerpt strong,
+  .news-excerpt li {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-article {
+    padding: 1.5rem;
+  }
+  
+  .news-title {
+    font-size: 1.4rem;
+  }
+  
+  .news-date-tag {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .news-excerpt {
+    padding: 1.2rem;
+  }
 }
