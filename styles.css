@@ -1222,70 +1222,105 @@ h1.toc-only-hidden + * {
   margin-top: 0.5rem;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE - MANTENER ESTILOS SIMILARES A DESKTOP */
 @media (max-width: 768px) {
   .news-grid {
-    gap: 1.8rem;
-    margin: 2rem 0;
+    gap: 2rem;
+    margin: 2.5rem 0;
   }
   
   .news-article {
-    padding: 1.8rem;
-    border-radius: 12px;
+    padding: 2rem;
+    border-radius: 15px; /* ← MANTENER igual que desktop */
+    border: 1px solid rgba(178, 171, 210, 0.4);
+    box-shadow: 0 8px 25px rgba(94, 60, 153, 0.08);
+  }
+  
+  /* MANTENER borde izquierdo decorativo */
+  .news-article::before {
+    width: 6px;
+    background: linear-gradient(to bottom, #5e3c99, #e66101);
   }
   
   .news-title {
-    font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem; /* ← Tamaño similar (o 1.6rem) */
+    margin-bottom: 1.8rem;
+    padding: 0.8rem 0;
+    /* Si quieres quitar la línea: no añadir ::after aquí */
   }
   
+  /* MANTENER BORDES COMO BOTONES */
   .news-date-tag {
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    margin: 1.2rem 0 0.8rem 0;
+    padding: 0.8rem 1.8rem; /* ← MANTENER padding de botones */
+    border-radius: 10px; /* ← MANTENER border-radius */
+    border: 2px solid rgba(94, 60, 153, 0.3); /* ← MANTENER borde */
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
     width: 100%;
     text-align: center;
+    display: flex; /* ← MANTENER flex para centrado */
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(94, 60, 153, 0.1);
   }
   
+  /* MANTENER BORDES COMO BOTONES EN .news-excerpt */
   .news-excerpt {
     padding: 1.5rem;
-    margin: 0.8rem 0 1.5rem 0;
-    font-size: 1rem;
+    margin: 0.3rem 0 1.5rem 0;
+    font-size: 1.05rem; /* ← MANTENER tamaño similar */
+    border-radius: 10px;
+    border: 2px solid rgba(253, 184, 99, 0.2);
+    line-height: 1.7;
   }
   
   .news-excerpt ul {
-    padding-left: 1.5rem;
+    padding-left: 1.8rem;
   }
   
   .news-excerpt li {
-    margin: 0.7rem 0;
+    margin: 0.8rem 0;
+    padding-left: 0.5rem;
   }
   
-  /* En móvil, ajuste de texto más agresivo */
+  /* MANTENER icono de punto naranja */
+  .news-excerpt li:before {
+    content: "•";
+    color: #e66101;
+    font-weight: bold;
+    position: absolute;
+    left: -1rem;
+    font-size: 1rem;
+  }
+  
+  /* MANTENER estilo de salas */
+  .news-excerpt strong:not(:first-of-type),
+  .news-excerpt p:has(+ ul) {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    margin: 1.2rem 0 0.5rem 0;
+    font-size: 1.1rem;
+    border-left: 4px solid #5e3c99;
+  }
+  
+  /* MANTENER estilo de ponentes */
+  .news-excerpt em {
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+    border-left: 2px solid #fdb863;
+  }
+  
+  /* AJUSTE DE TEXTO para móvil (más agresivo) */
   .news-excerpt,
   .news-excerpt strong,
-  .news-excerpt li {
+  .news-excerpt li,
+  .news-excerpt > strong:first-of-type {
     word-break: break-word;
     overflow-wrap: anywhere;
     hyphens: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .news-article {
-    padding: 1.5rem;
-  }
-  
-  .news-title {
-    font-size: 1.4rem;
-  }
-  
-  .news-date-tag {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
-  
-  .news-excerpt {
-    padding: 1.2rem;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
   }
 }
