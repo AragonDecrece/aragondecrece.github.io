@@ -1433,61 +1433,6 @@ h1.toc-only-hidden + * {
   margin-bottom: 1.8rem !important;
 }
 
-/* ===== TOC DEL DOCUMENTO DESPLEGABLE EN MÓVIL ===== */
-
-@media (max-width: 768px) {
-
-  /* Ocultamos el TOC por defecto */
-  .sidebar.sidebar-navigation nav {
-    display: none !important;
-  }
-
-  /* Botón que abre el índice */
-  .sidebar.sidebar-navigation::before {
-    content: "☰ Índice del contenido";
-    display: block;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
-    font-family: "Lato", sans-serif;
-    color: #5e3c99;
-    padding: 0.7rem 1rem;
-    border: 2px solid #fdb863;
-    border-radius: 10px;
-    cursor: pointer;
-    background: rgba(253, 184, 99, 0.15);
-    margin-bottom: 1rem;
-  }
-
-  /* Al tocar/clicar se despliega el TOC */
-  .sidebar.sidebar-navigation:hover nav,
-  .sidebar.sidebar-navigation:focus-within nav {
-    display: block !important;
-  }
-
-  /* Estilo del TOC desplegado */
-  .sidebar nav[role="doc-toc"] {
-    background: white !important;
-    border: 2px solid #fdb863 !important;
-    border-radius: 12px !important;
-    padding: 1rem !important;
-    box-shadow: 0 8px 25px rgba(94, 60, 153, 0.15) !important;
-  }
-
-  .sidebar nav[role="doc-toc"] ul {
-    padding-left: 0 !important;
-  }
-
-  .sidebar nav[role="doc-toc"] li {
-    margin-bottom: 0.8rem !important;
-  }
-
-  .sidebar nav[role="doc-toc"] a {
-    display: block !important;
-    text-align: left !important;
-  }
-}
-
 /* ===== HORARIO: CENTRADO VERTICAL REAL Y ESTABLE ===== */
 
 .news-date-tag {
@@ -1510,3 +1455,302 @@ h1.toc-only-hidden + * {
   max-width: max-content !important;
 }
 
+/* ===== TOC RESPONSIVE PARA MÓVIL ===== */
+
+/* Por defecto: visible en desktop */
+#TOC {
+  position: sticky;
+  top: 2rem;
+}
+
+/* En pantallas estrechas */
+@media (max-width: 900px) {
+
+  #TOC {
+    position: relative;
+    top: auto;
+    max-height: none;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  /* Título del TOC como botón */
+  #TOC > h2 {
+    cursor: pointer;
+    margin: 0;
+  }
+
+  /* Contenido plegado */
+  #TOC nav {
+    display: none;
+    margin-top: 1rem;
+  }
+
+  /* Cuando esté abierto */
+  #TOC.open nav {
+    display: block;
+  }
+}
+
+
+/* ===== PROGRAMA: EVITAR ESPACIOS GIGANTES Y MEJOR CORTE DE TEXTO ===== */
+
+.news-excerpt {
+  text-align: left !important;
+  text-justify: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.news-excerpt strong {
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* ===== PROGRAMA: DESACTIVAR JUSTIFICADO DE QUARTO ===== */
+
+.news-excerpt,
+.news-excerpt p,
+.news-excerpt li {
+  text-align: left !important;
+  text-justify: none !important;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+
+/* ===== TOC DESPLEGABLE EN MÓVIL ===== */
+
+@media (max-width: 900px) {
+
+  #TOC {
+    position: relative !important;
+    max-width: 100%;
+    margin: 1rem 0 2rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  #TOC nav {
+    display: none;
+  }
+
+  #TOC.open nav {
+    display: block;
+  }
+
+  #TOC h2 {
+    cursor: pointer;
+    margin: 0;
+  }
+}
+
+/* ===== BOTONES: TAMAÑO LEGIBLE EN MÓVIL ===== */
+
+.btn,
+.btn-outline {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .btn,
+  .btn-outline {
+    font-size: 1.05rem !important;
+    padding: 0.8rem 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-article {
+    padding: 1.5rem;
+  }
+  
+  .news-title {
+    font-size: 1.3rem;
+  }
+  
+  .news-excerpt {
+    font-size: 0.9rem;
+  }
+
+.news-excerpt li::marker {
+  color: #e66101;
+}
+
+ /* =========================================================
+   OVERRIDES FINALES — ESTABILIZACIÓN PROGRAMA + TOC + BOTONES
+   ========================================================= */
+
+/* ---------- 1. PROGRAMA: eliminar justificado y espacios rotos ---------- */
+.news-excerpt,
+.news-excerpt p,
+.news-excerpt span,
+.news-excerpt div,
+.news-excerpt strong,
+.news-excerpt em {
+  text-align: left !important;
+  text-align-last: left !important;
+  text-justify: none !important;
+  word-spacing: normal !important;
+
+  hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+}
+
+/* Negritas largas: nunca se salen */
+.news-excerpt strong,
+.news-excerpt b {
+  display: inline !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  hyphens: auto !important;
+}
+
+/* ---------- 2. HORARIO (.news-date-tag) centrado vertical y horizontal ---------- */
+.news-date-tag {
+  font-family: "Lato", sans-serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0.6rem 1.2rem !important;
+  line-height: 1.3 !important;
+
+  margin: 0.8rem 0 !important;
+  height: auto !important;
+  min-height: 2.4rem !important;
+
+  width: fit-content !important;
+  max-width: 100% !important;
+  text-align: center !important;
+}
+
+/* ---------- 3. BOTONES: tamaño legible en móvil ---------- */
+.btn,
+.btn-outline {
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 992px) {
+  .btn,
+  .btn-outline {
+    font-size: 1rem !important;
+    padding: 0.7rem 1.2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn,
+  .btn-outline {
+    font-size: 1.05rem !important;
+    padding: 0.8rem 1.4rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn,
+  .btn-outline {
+    font-size: 1rem !important;
+    padding: 0.7rem 1rem !important;
+  }
+}
+
+/* ---------- 4. TOC desplegable móvil ---------- */
+#TOC {
+  position: sticky;
+  top: 2rem;
+}
+
+@media (max-width: 900px) {
+  #TOC {
+    position: relative !important;
+    top: auto !important;
+    margin: 1rem 0 2rem 0 !important;
+    padding: 1rem !important;
+    border: 2px solid #fdb863 !important;
+    border-radius: 10px !important;
+    background: rgba(253, 184, 99, 0.12) !important;
+  }
+
+  #TOC nav {
+    display: none !important;
+  }
+
+  #TOC.open nav {
+    display: block !important;
+    margin-top: 1rem;
+  }
+
+  #TOC > h2 {
+    cursor: pointer !important;
+    margin: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: #5e3c99 !important;
+    text-align: center !important;
+  }
+}
+
+/* ===== PROGRAMA: PUNTOS NARANJAS EN MÓVIL ===== */
+
+/* Para listas dentro de .news-excerpt en móvil */
+@media (max-width: 768px) {
+  .news-excerpt ul,
+  .news-excerpt ol {
+    padding-left: 1.5rem !important;
+  }
+  
+  .news-excerpt li {
+    padding-left: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    position: relative;
+  }
+  
+  /* Crear puntos naranjas personalizados */
+  .news-excerpt li::before {
+    content: "•";
+    color: #e66101;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    line-height: 1.6;
+  }
+  
+  /* Para listas ordenadas (números) */
+  .news-excerpt ol li::before {
+    content: counter(list-item) ".";
+    color: #e66101;
+    font-weight: bold;
+    font-size: 1rem;
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+  }
+  
+  /* Resetear contador si hay múltiples listas */
+  .news-excerpt ol {
+    counter-reset: list-item;
+  }
+  
+  .news-excerpt ol li {
+    counter-increment: list-item;
+  }
+}
