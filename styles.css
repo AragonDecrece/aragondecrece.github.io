@@ -1754,3 +1754,39 @@ h1.toc-only-hidden + * {
     counter-increment: list-item;
   }
 }
+
+/* ===== IMAGEN AMPLIABLE SIMPLE ===== */
+
+.img-mini {
+  width: 120px;
+  border-radius: 6px;
+  cursor: zoom-in;
+  margin-top: 8px;
+}
+
+/* ocultar la imagen grande por defecto */
+details .img-ampliada {
+  display: none;
+}
+
+/* mostrarla solo cuando se abre */
+details[open] .img-ampliada {
+  display: block;
+  max-width: 90%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* evitar el triángulo del summary */
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+details[open] .img-ampliada {
+  display: block;
+  max-width: 600px;
+  margin: 12px auto;
+}
+
