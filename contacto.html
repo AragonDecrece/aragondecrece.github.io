@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Quiénes somos</title>
+<title>Contacto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,8 +103,16 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Evento ¡Decrece, co!</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./quienes-somos.html" aria-current="page"> 
+    <a class="nav-link" href="./materiales.html"> 
+<span class="menu-text">Materiales</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quienes-somos.html"> 
 <span class="menu-text">Quiénes somos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./contacto.html" aria-current="page"> 
+<span class="menu-text">Contacto</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -125,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Quiénes somos</h1>
+<h1 class="title">Contacto</h1>
 </div>
 
 
@@ -143,197 +151,24 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="quienes-somos" class="section-white">
-<section id="la-red-que-impulsa-decrece-co" class="level2">
-<h2 class="anchored" data-anchor-id="la-red-que-impulsa-decrece-co">La red que impulsa ¡Decrece, co!</h2>
-<p>Somos personas, colectivos y organizaciones que creemos que otra forma de vivir es posible dentro de los límites del planeta.</p>
-<p>Trabajamos desde el decrecimiento, el cuidado, la justicia social y la cooperación para imaginar y construir futuros habitables.</p>
-<p>Este encuentro nace del deseo de crear espacios donde pensar, sentir y practicar alternativas reales al modelo de crecimiento infinito.</p>
-<p><img src="decrece.jpg" class="img-fluid" width="1000"></p>
+<p>Si quieres formar parte de Aragón Decrece, ¡escríbenos!</p>
 </section>
-</section>
-<section id="galeria" class="level2">
-<h2 class="anchored" data-anchor-id="galeria">Galería de fotos</h2>
-<div class="gallery-grid">
-<div class="gallery-item" data-index="0">
-<img src="decrece1.jpg" class="gallery-img img-fluid" alt="Grupo Motor y Aliadas de Aragón decrece">
-<div class="overlay">
-Ampliar
+<div class="feature-header">
+<img src="correo.png" class="feature-image img-fluid">
+<h5 class="anchored">
+<strong>aragondecrece[at]proton.me</strong>
+</h5>
 </div>
+<div class="feature-header">
+<img src="instagram.png" class="feature-image img-fluid"> <a href="https://www.instagram.com/decrece_co/" style="color: #5e3c99;" target="_blank">
+<h5 class="anchored">
+<strong>instagram ¡Decrece, co!</strong>
+</h5>
+</a><p><a href="https://www.instagram.com/decrece_co/" style="color: #5e3c99;" target="_blank"></a></p>
 </div>
-<div class="gallery-item" data-index="1">
-<img src="decrece6.jpg" class="gallery-img img-fluid" alt="Creando ¡Decrece, co!">
-<div class="overlay">
-Ampliar
-</div>
-</div>
-<div class="gallery-item" data-index="2">
-<img src="decrece2.jpg" class="gallery-img img-fluid" alt="Creando ¡Decrece, co!">
-<div class="overlay">
-Ampliar
-</div>
-</div>
-<div class="gallery-item" data-index="3">
-<img src="decrece3.jpg" class="gallery-img img-fluid" alt="Creando ¡Decrece, co!">
-<div class="overlay">
-Ampliar
-</div>
-</div>
-<div class="gallery-item" data-index="4">
-<img src="decrece4.jpg" class="gallery-img img-fluid" alt="Creando ¡Decrece, co!">
-<div class="overlay">
-Ampliar
-</div>
-</div>
-<div class="gallery-item" data-index="5">
-<img src="decrece5.jpg" class="gallery-img img-fluid" alt="Creando ¡Decrece, co!">
-<div class="overlay">
-Ampliar
-</div>
-</div>
-</div>
-<!-- Modal para mostrar imágenes en grande CON FLECHAS -->
-<div id="imageModal" class="modal">
-<span class="close">×</span> <a class="prev">❮</a> <a class="next">❯</a> <img class="modal-content" id="modalImage">
-<div id="caption">
-
-</div>
-</div>
-<!-- Modal para mostrar imágenes en grande CON FLECHAS -->
-<div id="imageModal" class="modal">
-<span class="close">×</span> <a class="prev">❮</a> <a class="next">❯</a>
-<div class="modal-image-container">
-<pre><code>&lt;img class="modal-content" id="modalImage"&gt;</code></pre>
-</div>
-<div id="caption">
-
-</div>
-</div>
-<script>
-// Script corregido - versión funcional con flechas
-document.addEventListener('DOMContentLoaded', function() {
-  // Obtener todos los elementos
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-  const captionText = document.getElementById('caption');
-  const closeBtn = document.querySelector('.close');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  
-  // Crear array con todas las imágenes
-  const images = [];
-  let currentIndex = 0;
-  
-  // Recolectar imágenes de la galería
-  galleryItems.forEach(function(item, index) {
-    const img = item.querySelector('img');
-    images.push({
-      src: img.src,
-      alt: img.alt
-    });
-    
-    // Abrir modal al hacer clic
-    item.addEventListener('click', function() {
-      currentIndex = index;
-      openModal();
-    });
-  });
-  
-  // Función para abrir modal
-  function openModal() {
-    modal.style.display = "flex";
-    // USAR CLASE CSS - ESTO ES LO IMPORTANTE
-    document.body.classList.add('modal-active');
-    updateModal();
-  }
-  
-  // Función para cerrar modal
-  function closeModal() {
-    modal.style.display = "none";
-    // QUITAR CLASE CSS - ESTO ES LO IMPORTANTE
-    document.body.classList.remove('modal-active');
-    updateModal();
-  }
-  
-  // Función para actualizar imagen en modal
-  function updateModal() {
-    const image = images[currentIndex];
-    modalImg.src = image.src;
-    modalImg.alt = image.alt;
-    captionText.innerHTML = image.alt;
-    
-    // Asegurar que la imagen mantiene proporciones
-    modalImg.style.objectFit = "contain";
-    modalImg.style.maxWidth = "90%";
-    modalImg.style.maxHeight = "80%";
-  }
-  
-  // Función siguiente imagen
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateModal();
-  }
-  
-  // Función anterior imagen
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateModal();
-  }
-  
-  // Event Listeners
-  closeBtn.addEventListener('click', function() {
-    closeModal();
-  });
-  
-  prevBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    prevImage();
-  });
-  
-  nextBtn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    nextImage();
-  });
-  
-  modal.addEventListener('click', function(event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-  
-  // Navegación con teclado
-  document.addEventListener('keydown', function(event) {
-    if (modal.style.display === "flex") {
-      switch(event.key) {
-        case "Escape":
-          closeModal();
-          break;
-        case "ArrowLeft":
-          prevImage();
-          break;
-        case "ArrowRight":
-          nextImage();
-          break;
-      }
-    }
-  });
-  
-  // Asegurar que las imágenes se cargan
-  modalImg.onload = function() {
-    console.log("Imagen cargada:", this.src);
-  };
-  
-  modalImg.onerror = function() {
-    console.error("Error cargando imagen:", this.src);
-    captionText.innerHTML = "Error cargando la imagen";
-  };
-});
-</script>
+<hr>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
